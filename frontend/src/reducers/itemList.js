@@ -10,6 +10,7 @@ import {
   PROFILE_PAGE_UNLOADED,
   PROFILE_FAVORITES_PAGE_LOADED,
   PROFILE_FAVORITES_PAGE_UNLOADED,
+  ITEM_SEARCHED,
 } from "../constants/actionTypes";
 
 const reducer = (state = {}, action) => {
@@ -80,6 +81,12 @@ const reducer = (state = {}, action) => {
     case PROFILE_PAGE_UNLOADED:
     case PROFILE_FAVORITES_PAGE_UNLOADED:
       return {};
+    // Add case for search.  Payload will contain item subset list.
+    case ITEM_SEARCHED:
+      return {
+        ...state,
+        ...action.payload,
+      };
     default:
       return state;
   }

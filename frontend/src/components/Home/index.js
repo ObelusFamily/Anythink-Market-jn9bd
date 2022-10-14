@@ -8,6 +8,7 @@ import {
   HOME_PAGE_LOADED,
   HOME_PAGE_UNLOADED,
   APPLY_TAG_FILTER,
+  ITEM_SEARCHED,
 } from "../../constants/actionTypes";
 
 const Promise = global.Promise;
@@ -24,6 +25,8 @@ const mapDispatchToProps = (dispatch) => ({
   onLoad: (tab, pager, payload) =>
     dispatch({ type: HOME_PAGE_LOADED, tab, pager, payload }),
   onUnload: () => dispatch({ type: HOME_PAGE_UNLOADED }),
+  // Add an onSearch dispatch.
+  onSearch: (payload) => dispatch({ type: ITEM_SEARCHED, payload }),
 });
 
 class Home extends React.Component {
@@ -42,10 +45,19 @@ class Home extends React.Component {
     this.props.onUnload();
   }
 
+  // Add event handler for onSearch.  Should fetch the items with the filter query string, and then call the dispatcher to update the store.
+  handleItemSearch = async (title) => {
+    // Find all when the input is cleared.
+    if (title.length < 3 && title.length > 0) return;
+
+    const filteredItems = await agent.Items.byTitle(title);
+    this.props.onSearch(filteredItems);
+  };
+
   render() {
     return (
       <div className="home-page">
-        <Banner />
+        <Banner onItemSearch={(title) => this.handleItemSearch(title)} />
 
         <div className="container page">
           <Tags tags={this.props.tags} onClickTag={this.props.onClickTag} />
