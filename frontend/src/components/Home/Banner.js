@@ -14,6 +14,7 @@ const Banner = (props) => {
           <form className="form-inline p-2">
             <div className="input-group">
               <input 
+                id="search-box"
                 className="form-control"
                 ref={searchInputRef} 
                 type="text" 
