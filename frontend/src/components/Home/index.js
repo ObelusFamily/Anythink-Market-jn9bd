@@ -47,6 +47,9 @@ class Home extends React.Component {
 
   // Add event handler for onSearch.  Should fetch the items with the filter query string, and then call the dispatcher to update the store.
   handleItemSearch = async (title) => {
+    // Find all when the input is cleared.
+    if (title.length < 3 && title.length > 0) return;
+    
     const filteredItems = await agent.Items.byTitle(title);
     this.props.onSearch(filteredItems)
   }
@@ -55,7 +58,7 @@ class Home extends React.Component {
     return (
       <div className="home-page">
         {/* Add an onSearch prop. */}
-        <Banner onItemSearch={() => this.handleItemSearch()} />
+        <Banner onItemSearch={(title) => this.handleItemSearch(title)} />
 
         <div className="container page">
           <Tags tags={this.props.tags} onClickTag={this.props.onClickTag} />

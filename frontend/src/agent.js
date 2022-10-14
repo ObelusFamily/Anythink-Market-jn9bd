@@ -59,7 +59,7 @@ const Items = {
   byTag: (tag, page) =>
     requests.get(`/items?tag=${encode(tag)}&${limit(1000, page)}`),
   // Get items by title.  Default to empty string so we get all items when no title provided.
-  byTitle: (title = "tent", page) =>
+  byTitle: (title = "", page) =>
     requests.get(`/items?title=${title}&${limit(1000, page)}`),
   del: (slug) => requests.del(`/items/${slug}`),
   favorite: (slug) => requests.post(`/items/${slug}/favorite`),
