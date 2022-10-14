@@ -10,21 +10,23 @@ const Banner = (props) => {
         <img src={logo} alt="banner" />
         <div className="d-flex flex-row justify-content-center align-items-center">
           <span id="get-part">A place to get</span>
-          {/* Create input for item search. */}
           <form className="form-inline p-2">
             <div className="input-group">
-              <input 
+              <input
                 id="search-box"
                 className="form-control"
-                ref={searchInputRef} 
-                type="text" 
+                ref={searchInputRef}
+                type="text"
                 placeholder="What is it that you truly desire"
-                onChange={() => props.onItemSearch(searchInputRef.current.value)} />
-                <div className="input-group-append">
-                  <span className="input-group-text">
-                    <i className="bi bi-search" />
-                  </span>
-                </div>
+                onChange={() =>
+                  props.onItemSearch(searchInputRef.current.value)
+                }
+              />
+              <div className="input-group-append">
+                <span className="input-group-text">
+                  <i className="bi bi-search" />
+                </span>
+              </div>
             </div>
           </form>
           <span> the cool stuff.</span>

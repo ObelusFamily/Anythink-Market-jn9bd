@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({ type: HOME_PAGE_LOADED, tab, pager, payload }),
   onUnload: () => dispatch({ type: HOME_PAGE_UNLOADED }),
   // Add an onSearch dispatch.
-  onSearch: (payload) => dispatch({ type: ITEM_SEARCHED, payload })
+  onSearch: (payload) => dispatch({ type: ITEM_SEARCHED, payload }),
 });
 
 class Home extends React.Component {
@@ -49,15 +49,14 @@ class Home extends React.Component {
   handleItemSearch = async (title) => {
     // Find all when the input is cleared.
     if (title.length < 3 && title.length > 0) return;
-    
+
     const filteredItems = await agent.Items.byTitle(title);
-    this.props.onSearch(filteredItems)
-  }
+    this.props.onSearch(filteredItems);
+  };
 
   render() {
     return (
       <div className="home-page">
-        {/* Add an onSearch prop. */}
         <Banner onItemSearch={(title) => this.handleItemSearch(title)} />
 
         <div className="container page">
