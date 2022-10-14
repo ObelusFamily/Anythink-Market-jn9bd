@@ -1,6 +1,7 @@
 export const APP_LOAD = "APP_LOAD";
 export const REDIRECT = "REDIRECT";
 export const ITEM_SUBMITTED = "ITEM_SUBMITTED";
+export const ITEM_SEARCHED = "ITEM_SEARCHED";
 export const SETTINGS_SAVED = "SETTINGS_SAVED";
 export const DELETE_ITEM = "DELETE_ITEM";
 export const SETTINGS_PAGE_UNLOADED = "SETTINGS_PAGE_UNLOADED";
