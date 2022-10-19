@@ -1,4 +1,8 @@
-import { HOME_PAGE_LOADED, HOME_PAGE_UNLOADED, SEARCH_INPUT_CHANGED } from "../constants/actionTypes";
+import {
+  HOME_PAGE_LOADED,
+  HOME_PAGE_UNLOADED,
+  SEARCH_INPUT_CHANGED,
+} from "../constants/actionTypes";
 
 const reducer = (state = {}, action) => {
   switch (action.type) {
@@ -13,7 +17,7 @@ const reducer = (state = {}, action) => {
       return {
         ...state,
         search: action.payload,
-      }
+      };
     default:
       return state;
   }

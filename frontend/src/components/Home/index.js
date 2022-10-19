@@ -28,7 +28,8 @@ const mapDispatchToProps = (dispatch) => ({
   onUnload: () => dispatch({ type: HOME_PAGE_UNLOADED }),
   // Add an onSearch dispatch.
   onSearch: (payload) => dispatch({ type: ITEM_SEARCHED, payload }),
-  onSearchInputChange: (payload) => dispatch({ type: SEARCH_INPUT_CHANGED, payload }),
+  onSearchInputChange: (payload) =>
+    dispatch({ type: SEARCH_INPUT_CHANGED, payload }),
 });
 
 class Home extends React.Component {
