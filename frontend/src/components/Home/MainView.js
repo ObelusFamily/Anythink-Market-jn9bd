@@ -62,6 +62,7 @@ const TagFilterTab = (props) => {
 const mapStateToProps = (state) => ({
   ...state.itemList,
   tags: state.home.tags,
+  search: state.home.search,
   token: state.common.token,
 });
 
@@ -72,7 +73,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const MainView = (props) => {
   if (props.items?.length === 0) {
-    return <NoItemsFound />
+    return <NoItemsFound search={props.search} />
   }
 
 

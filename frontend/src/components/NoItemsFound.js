@@ -5,7 +5,7 @@ const NoItemsFound = (props) => {
                 <div>
                     <i className="bi bi-emoji-frown" />
                 </div>
-                <p>No items found for {props.title ? props.title : "your search"}.</p>
+                <p>No items found for {props.search ? `"${props.search}"` : "your search"}.</p>
             </div>
         </div>
     )

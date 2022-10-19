@@ -9,6 +9,7 @@ import {
   HOME_PAGE_UNLOADED,
   APPLY_TAG_FILTER,
   ITEM_SEARCHED,
+  SEARCH_INPUT_CHANGED,
 } from "../../constants/actionTypes";
 
 const Promise = global.Promise;
@@ -27,6 +28,7 @@ const mapDispatchToProps = (dispatch) => ({
   onUnload: () => dispatch({ type: HOME_PAGE_UNLOADED }),
   // Add an onSearch dispatch.
   onSearch: (payload) => dispatch({ type: ITEM_SEARCHED, payload }),
+  onSearchInputChange: (payload) => dispatch({ type: SEARCH_INPUT_CHANGED, payload }),
 });
 
 class Home extends React.Component {
@@ -49,6 +51,7 @@ class Home extends React.Component {
   handleItemSearch = async (title) => {
     // Find all when the input is cleared.
     if (title.length < 3 && title.length > 0) return;
+    this.props.onSearchInputChange(title);
 
     const filteredItems = await agent.Items.byTitle(title);
     this.props.onSearch(filteredItems);
