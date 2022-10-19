@@ -73,7 +73,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const MainView = (props) => {
   if (props.items?.length === 0) {
-    return "No items found";
+    return <NoItemsFound search={props.search} />;
   }
 
   return (
