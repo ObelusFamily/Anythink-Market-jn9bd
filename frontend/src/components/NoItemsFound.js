@@ -1,3 +1,5 @@
+import React from "react";
+
 const NoItemsFound = (props) => {
   return (
     <div id="empty" className="d-flex justify-content-center mt-3">
