@@ -12,7 +12,6 @@ const Banner = (props) => {
             <div className="input-group">
               <input
                 id="search-box"
-                className="form-control"
                 placeholder="What is it that you truly desire"
                 onChange={props.onItemSearch}
               />
