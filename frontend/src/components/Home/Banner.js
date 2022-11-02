@@ -7,7 +7,7 @@ const Banner = (props) => {
   return (
     <div className="banner text-white">
       <div className="container p-4 text-center">
-        <img src={logo} alt="banner" />
+        {/* <img src={logo} alt="banner" /> */}
         <div className="d-flex flex-row justify-content-center align-items-center">
           <span id="get-part">A place to get</span>
           <form className="form-inline p-2">
