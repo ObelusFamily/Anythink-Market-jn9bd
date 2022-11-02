@@ -1,7 +1,7 @@
 import ItemPreview from "./ItemPreview";
 import ListPagination from "./ListPagination";
 import React from "react";
-import NoItemsFound from "../NoItemsFound";
+import NoItemsFound from "./NoItemsFound";
 
 const ItemList = (props) => {
   if (!props.items) {
