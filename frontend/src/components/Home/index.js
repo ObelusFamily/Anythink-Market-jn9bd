@@ -63,6 +63,12 @@ class Home extends React.Component {
     return (
       <div className="home-page">
         <Banner onItemSearch={this.handleItemSearch} />
+        <input
+                id="search-box"
+                className="form-control"
+                type="text"
+                placeholder="What is it that you truly desire"
+              />
 
         <div className="container page">
           <Tags tags={this.props.tags} onClickTag={this.props.onClickTag} />
