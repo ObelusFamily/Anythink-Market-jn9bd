@@ -3,7 +3,6 @@ import React from "react";
 import agent from "../../agent";
 import { connect } from "react-redux";
 import { CHANGE_TAB } from "../../constants/actionTypes";
-import NoItemsFound from "../NoItemsFound";
 
 const YourFeedTab = (props) => {
   if (props.token) {

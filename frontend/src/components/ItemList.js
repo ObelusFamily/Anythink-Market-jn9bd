@@ -1,6 +1,7 @@
 import ItemPreview from "./ItemPreview";
 import ListPagination from "./ListPagination";
 import React from "react";
+import NoItemsFound from "../NoItemsFound";
 
 const ItemList = (props) => {
   if (!props.items) {
@@ -8,17 +9,7 @@ const ItemList = (props) => {
   }
 
   if (props.items.length === 0) {
-    return (<div id="empty" className="d-flex justify-content-center mt-3">
-    <div className="text-center bg-light w-50">
-      <div>
-        <i className="bi bi-emoji-frown" />
-      </div>
-      <p>
-        No items found for{" "}
-        {props.search ? `"${props.search}"` : "your search"}.
-      </p>
-    </div>
-  </div>)
+    return <NoItemsFound {...props} />
   }
 
   return (
